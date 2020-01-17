@@ -12,14 +12,58 @@
   padding:10rpx 26rpx;
   background-color:#EA4350;
 }
-.search{
-  width:700rpx;
-  height:80rpx;
-  background-color:#ffffff;
-  border-radius: 5rpx;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  font-size:32rpx;
-  color:#767676;
+/* 轮播图 */
+ swiper{
+  height:340rpx;
 }
+swiper image{
+  height:340rpx;
+}
+/* 首类导航 */
+.Menus{
+  display:flex;
+  /* justify-content: space-evenly; */
+  height:140rpx;
+  margin:8rpx 0 0;
+} 
+.Menus navigator{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+ .Menus image{
+  width:128rpx;
+  height:100%; 
+} 
+
+.floor{
+  margin-top:43rpx;
+}
+.floor-main{
+  /* padding:0 10rpx; */
+}
+.floor-main navigator{
+    float:left;
+    width:249.975rpx;
+    border-left:10rpx solid transparent;
+}
+.floor-main navigator:nth-last-child(-n+4){
+  height:199.6343rpx;
+}
+.floor-main navigator image{
+  height:100%;
+}
+.clearfix::after{
+  content:".";
+  clear:both;
+  display:block;
+  visibility: hidden;
+  line-height:0;
+}
+ .floor-main navigator:nth-child(2),.floor-main navigator:nth-child(3){
+  border-bottom: 4rpx solid transparent;
+}
+.floor-main navigator:nth-child(4),.floor-main navigator:nth-child(5){
+  border-top: 4rpx solid transparent;
+} 
+

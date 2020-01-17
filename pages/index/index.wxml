@@ -1,7 +1,86 @@
-
 <view class="search-box">
-  <view class="search">搜索</view> 
+  <!-- <view class="search">{{searchText}}</view> -->
+  <searchInput title="{{searchText}}" bind:mychildren="getValue" />
 </view>
-<view class="nav">
-  <view class="item" wx:key="id" wx:for="{{nav}}" wx:for-item="v" wx:for-index="i">{{v.name}}{{i}}</view>
+<!-- 轮播图 -->
+<swiper indicator-dots="true" indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="#f00" autoplay="true" interval="5000">
+  <swiper-item wx:for="{{images}}" wx:key="goods_id">
+    <navigator url="{{item.navigator_url}}">
+      <image src="{{item.image_src}}" />
+    </navigator>
+  </swiper-item>
+</swiper>
+
+<!--项目的分类-->
+<view class="Menus">
+  <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}" wx:for="{{menus}}" wx:key="index">
+    <image src="{{item.image_src}}"></image>
+  </navigator>
 </view>
+
+<!-- 楼层 -->
+<view wx:for="{{floors}}" wx:key="index" class="floor">
+    <!-- 楼层title -->
+    <view>
+      <image src="{{item.floor_title.image_src}}" mode="widthFix"></image>
+    </view>
+    <!-- 楼层图片 -->
+    <view class="floor-main clearfix">
+      <navigator wx:for="{{item.product_list}}" wx:key="i" wx:for-item="v" wx:for-index="i" url="{{v.navigator_url}}" open-type="{{v.open_type}}">
+        <image src="{{v.image_src}}" mode="{{i===0?'widthFix':'scaleToFill'}}"></image>
+      </navigator>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 测试代码 -->
+<!-- <view>
+  <button type="default" size="{{100}}" open-type="contact">
+    contact
+  </button>
+  <button type="default" size="{{100}}" open-type="share">
+    share
+  </button>
+  <button type="warn" size="{{100}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+    getPhoneNumber
+  </button>
+  <button type="primary" size="{{100}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    getUserInfo
+  </button>
+  <button type="default" size="{{100}}" open-type="lauchApp">
+    lauchApp
+  </button>
+  <button type="warn" size="{{100}}" open-type="openSetting">
+    openSetting
+  </button>
+    <button type="primary" size="{{100}}" open-type="feedback">
+    feedback
+  </button>
+</view> -->
