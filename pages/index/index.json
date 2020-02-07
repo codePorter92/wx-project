@@ -3,7 +3,6 @@
     "searchInput":"../../components/searchInput/searchinput"
   },
   "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#EA4350",
   "navigationBarTitleText": "首页",
   "navigationBarTextStyle": "white"
 }

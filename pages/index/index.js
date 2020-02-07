@@ -5,12 +5,6 @@ Page({
    */
   data: {
     searchText: "搜索",
-    nav: [
-      { id: 1, name: "分类" },
-      { id: 2, name: "秒杀拍" },
-      { id: 3, name: "超市购" },
-      { id: 4, name: "母婴品" }
-    ],
     images:[],
     menus:[],
     floors:[]

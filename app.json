@@ -1,13 +1,14 @@
 {
   "pages": [
+    "pages/search/index",
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/category/index",
     "pages/goods_detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f00",
-    "navigationBarTitleText": "黑马头条",
+    "navigationBarBackgroundColor": "#EA4350",
+    "navigationBarTitleText": "黑马优购",
     "navigationBarTextStyle": "white"
   },
   "tabBar":{
@@ -20,7 +21,7 @@
         "selectedIconPath":"assets/icons/home-o.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/category/index",
         "text": "分类",
         "iconPath": "assets/icons/category.png",    
         "selectedIconPath"   :"assets/icons/category-o.png"

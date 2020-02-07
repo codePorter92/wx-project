@@ -1,1 +1,3 @@
-  <view class="search" bindtap="translateValue">{{title}}</view>
+  <navigator url="/pages/search/index" open-type="navigate">
+     <view class="search" bindtap="translateValue">{{title}}</view>
+  </navigator>

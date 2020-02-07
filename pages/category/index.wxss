@@ -1,0 +1,59 @@
+/* pages/category/index.wxss */
+.catogory-title{
+  padding:10rpx 25rpx;
+  background-color:#EA4350;
+}
+/* 主体部分 */
+.main{
+  display: flex;
+}
+.main .left{
+  flex: 0 0 182rpx;
+  height:1000rpx;
+  display:flex;
+  flex-wrap: wrap;
+  background-color:#F3F3F3;
+  font-size:27rpx;
+  color:#585858;
+  text-align: center;
+}
+.main .left view{
+  line-height:43rpx;
+  border-left:5rpx solid transparent;
+  margin:18rpx 0;
+}
+.navigator-hover{
+  /* height:140rpx; */
+  border-left:5rpx solid #EA4350;
+  color:#EA4350;
+}
+
+.main .right .storeName{
+  text-align:center;
+  font-size:26rpx;
+  color:#272626;
+  line-height:43rpx;
+  margin:16rpx 0 21rpx;
+}
+.main .right .stores{
+  display:flex;
+  flex-wrap:wrap;
+  padding:0 20rpx; 
+}
+.main .right .loginItem{
+  width:120rpx;
+  text-align: center;
+  margin:0 28rpx 30rpx;
+}
+.main .right .loginItem .photo{
+  width:120rpx;
+  height:120rpx;
+  background-color: red; 
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+}
+.main .right .loginItem .itemName{
+  font-size:21rpx;
+  color:#2E2E2E;
+}

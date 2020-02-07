@@ -1,6 +1,6 @@
 
 /* 样式初始化 */
-page,view,text,image,navigator{
+page,view,text,image,navigator,scroll-view{
   margin:0rpx;
   padding:0rpx;
   box-sizing:border-box;
@@ -12,5 +12,6 @@ image{
 }
 
 page{
-  --Height:140rpx,
+  --Height:140rpx;
+  --themecolor:#eb4450;
 }

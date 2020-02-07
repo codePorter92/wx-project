@@ -1,0 +1,23 @@
+<view class="catogory-title">
+<searchInput title="搜索"></searchInput>
+</view>
+<!-- 渲染内容 -->
+<view class="main"  >
+  <!-- 左边 -->
+  <scroll-view class="left" scroll-y="{{true}}">
+     <view wx:for="{{categorys}}" wx:key="index" bindtap="clickMe" data-id="{{item.cat_id}}">
+       <navigator url="index?cat_id={{item.cat_id}}" open-type="redirect" hover-class="navigator-hover">{{item.cat_name}}</navigator>
+     </view>
+  </scroll-view>
+  <!-- 右边 -->
+  <scroll-view class="right" scroll-y="{{false}}">
+    <view class="storeName">/ 电视 /</view>
+    <view class="stores">
+        <navigator class="loginItem">
+          <view class="photo">照片</view>
+          <view class="itemName">项目</view>
+        </navigator>
+    </view>
+  </scroll-view>
+</view>
+

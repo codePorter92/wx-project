@@ -1,0 +1,28 @@
+.searchBox {
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 18rpx;
+}
+.searchBox .searchInput {
+  display: flex;
+  width: 599rpx;
+  height: 61rpx;
+  align-items: center;
+  background-color: #E7E7E7;
+  border-radius: 27rpx;
+  font-size: 25rpx;
+}
+.searchBox .searchInput icon {
+  margin: 0 15rpx;
+}
+.searchBox .searchBtn {
+  width: 101rpx;
+  height: 61rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--themecolor);
+  border-radius: 8rpx;
+  font-size: 25rpx;
+  color: #ffffff;
+}
