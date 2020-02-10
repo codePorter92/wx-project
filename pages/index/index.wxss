@@ -8,10 +8,6 @@
   text-align: center;
 }
 
-.search-box{
-  padding:10rpx 26rpx;
-  background-color:#EA4350;
-}
 /* 轮播图 */
  swiper{
   height:340rpx;

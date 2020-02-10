@@ -1,6 +1,6 @@
 <view class="search-box">
   <!-- <view class="search">{{searchText}}</view> -->
-  <searchInput title="{{searchText}}" bind:mychildren="getValue" />
+  <searchInput  bind:mychildren="getValue" />
 </view>
 <!-- 轮播图 -->
 <swiper indicator-dots="true" indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="#f00" autoplay="true" interval="5000">

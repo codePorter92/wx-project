@@ -1,23 +1,29 @@
-<view class="catogory-title">
-<searchInput title="搜索"></searchInput>
+<view class="search_box">
+  <searchInput/>
 </view>
-<!-- 渲染内容 -->
-<view class="main"  >
-  <!-- 左边 -->
-  <scroll-view class="left" scroll-y="{{true}}">
-     <view wx:for="{{categorys}}" wx:key="index" bindtap="clickMe" data-id="{{item.cat_id}}">
-       <navigator url="index?cat_id={{item.cat_id}}" open-type="redirect" hover-class="navigator-hover">{{item.cat_name}}</navigator>
-     </view>
-  </scroll-view>
-  <!-- 右边 -->
-  <scroll-view class="right" scroll-y="{{false}}">
-    <view class="storeName">/ 电视 /</view>
-    <view class="stores">
-        <navigator class="loginItem">
-          <view class="photo">照片</view>
-          <view class="itemName">项目</view>
-        </navigator>
+<!-- 分类主体 -->
+<view class="category_main">
+  <view>
+    <!-- 列表左边 -->
+    <scroll-view  scroll-y="true" class="category_list" >
+      <view class="category_item {{index===currentIndex?'active':''}}" wx:for="{{categoryItem}}" wx:key="index" bindtap="getItemGoods" data-index="{{index}}">{{item.cat_name}}</view>
+    </scroll-view>
+  </view>
+  <!-- 列表右边 -->
+  <scroll-view class="good_list" scroll-y="true" scroll-top="{{scrollTop}}">
+    <view class="good_list_item" wx:for="{{good_list}}" wx:key="index">
+      <text decode="true">/&nbsp;{{item.cat_name}}&nbsp;/</text>
+      <!-- 品牌列表 -->
+      <view class="good_logo">
+        <view class="logo_item clearfix" wx:for="{{item.children}}" wx:key="index" wx:for-item="v" wx:for-index="i">
+          <navigator url="/pages/goods_list/index?cid={{v.cat_id}}" open-type="navigate">
+            <view class="image_wrapper">
+              <image src="{{v.cat_icon}}" ></image>
+            </view>
+            <view class="logo_name">{{v.cat_name}}</view>
+          </navigator>
+        </view>
+      </view>
     </view>
   </scroll-view>
 </view>
-

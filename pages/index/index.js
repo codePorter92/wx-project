@@ -4,7 +4,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    searchText: "搜索",
     images:[],
     menus:[],
     floors:[]

@@ -1,3 +1,5 @@
+<view class="searchBox">
   <navigator url="/pages/search/index" open-type="navigate">
-     <view class="search" bindtap="translateValue">{{title}}</view>
+     <view class="search" bindtap="translateValue">搜索</view>
   </navigator>
+</view>

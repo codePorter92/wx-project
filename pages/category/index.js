@@ -1,5 +1,4 @@
 // pages/category/index.js
-// 引入请求头
 import { request } from "../../request/request"
 Page({
 
@@ -7,32 +6,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    categorys:[],
-    children:[],
-    aa:{} 
+    categoryItem: [],
+    good_list: [],
+    scrollTop: 0,
+    currentIndex: 0
   },
-  // 点击事件
-  clickMe(e){
-    console.log(e.currentTarget.dataset)
-    console.log(this.categorys)
-    console.log(this.children)
-    console.log(this.aa)
+  // 封装请求数据的函数
+  getCategoryItem: function () {
+
   },
-  // 监听
-  observers:{},
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
-   let res = await request({
-      url:"/categories"
-    })
-    console.log(res.data.message)
-    this.aa=res
-    this.setData({
-      categorys:res.data.message
-    })
-    // console.log(this.categorys)
+  onLoad: function (options) {
+
   },
 
   /**
@@ -45,10 +32,55 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: async function () {
+    const cart = wx.getStorageSync("cart")
+    if(!cart){
+      this.askData()
+    }else{
+      if (Date.now() - cart.time >100 * 1000){
+       this.askData()
+      }else{
+        this.setData({
+          categoryItem: cart.data,
+          good_list: cart.data[0].children,
+          scrollTop:0,
+          currentIndex:0
+        })
+      }
+    }
+    // this.askData()
   },
-
+  // 封装请求数据的函数
+  askData: async function () {
+    // 获取数据，渲染数据
+    const category_item = await request({
+      url: "/categories"
+    })
+    this.setData({
+      categoryItem: category_item.data.message
+    })
+    wx.setStorageSync('cart', {
+      time: Date.now(),
+      data: category_item.data.message
+    })
+    this.getGoodList()
+  },
+  // 封装获取货物列表的函数
+  getGoodList: function () {
+    const { children } = this.data.categoryItem[this.data.currentIndex]
+    this.setData({
+      good_list: children
+    })
+    // 本地存储,每次只能存储一个信息
+   
+  },
+  // 点击每一项时的事件
+  getItemGoods: function (e) {
+    this.setData({
+      currentIndex: e.currentTarget.dataset.index
+    })
+    this.getGoodList()
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

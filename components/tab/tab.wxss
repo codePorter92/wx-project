@@ -1,0 +1,19 @@
+/* components/tab/tab.wxss */
+.tablist{
+  display: flex;
+  justify-content: space-around;
+}
+.tablist .tabItem{
+  flex:0 0 184rpx;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:88rpx;
+  font-size:30rpx;
+  color:#676767;
+}
+.tablist .active{
+  border-bottom:5rpx solid var(--themecolor);
+  font-weight: 600;
+  color:#3D3D3D 
+}

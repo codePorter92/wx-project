@@ -1,0 +1,22 @@
+<view class="searchInput">
+  <searchInput title="搜索" />
+</view>
+<!-- tab栏 -->
+<view class="tabList">
+  <tab tab_list="{{tabList}}" bind:tabChange="handleTabChange" />
+</view>
+
+<!-- 主页部分 -->
+<view wx:if="{{tabList[0].isActive}}" class="good_item">
+  <navigator wx:for="{{goods}}" wx:key="index" url="/pages/goods_detail/index?goods_id={{item.goods_id}}" open-type="navigate">
+    <view class="good_item_left">
+      <image src="{{item.goods_big_logo?item.goods_big_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+    </view>
+    <view class="good_item_right">
+      <view class="good_item_title">{{item.goods_name}}</view>
+      <view class="good_item_price">￥{{item.goods_price}}</view>
+    </view>
+  </navigator>
+</view>
+<view wx:if="{{tabList[1].isActive}}">2</view>
+<view wx:if="{{tabList[2].isActive}}">3</view>

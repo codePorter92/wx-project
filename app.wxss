@@ -13,5 +13,5 @@ image{
 
 page{
   --Height:140rpx;
-  --themecolor:#eb4450;
+  --themecolor:#eb4350;
 }

@@ -1,0 +1,29 @@
+.good_item {
+  padding: 0 26rpx;
+}
+.good_item navigator {
+  display: flex;
+  padding-left: 15rpx;
+}
+.good_item navigator .good_item_left image {
+  width: 191rpx;
+  height: 191rpx;
+}
+.good_item navigator .good_item_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  padding: 26rpx 0;
+  font-size: 24rpx;
+}
+.good_item navigator .good_item_right .good_item_title {
+  color: #434343;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.good_item navigator .good_item_right .good_item_price {
+  color: var(--themecolor);
+}
