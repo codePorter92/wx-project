@@ -1,1 +1,130 @@
-/* pages/goods_detail/index.wxss */
+.good_image swiper {
+  height: 497rpx;
+}
+.good_image swiper swiper-item {
+  text-align: center;
+}
+.good_image swiper swiper-item image {
+  width: 497rpx;
+  height: 497rpx;
+}
+.good_information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50rpx;
+  margin: 19rpx 38rpx 19rpx 33rpx;
+}
+.good_information .good_price {
+  font-size: 36rpx;
+  color: var(--themecolor);
+}
+.good_information .iconfont {
+  display: flex;
+  font-size: 36rpx;
+}
+.good_information .iconfont .good_share {
+  position: relative;
+  margin-right: 45rpx;
+}
+.good_information .iconfont .good_share button.default {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.good_information .iconfont .icon-shoucang {
+  font-size: 43rpx;
+}
+.good_information .iconfont .active {
+  color: var(--themecolor);
+}
+.good_title {
+  margin: 0 33rpx 0 40rpx;
+  font-size: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.good_informationII {
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.good_informationII .good_titleII {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #434343;
+}
+.good_serve {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 94rpx;
+  background-color: #ffffff;
+  border-top: 1px solid #ededed;
+}
+.good_serve .shop_service {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.good_serve .shop_service .iconfont.icon-lianxikefu {
+  font-size: 40rpx;
+}
+.good_serve .shop_service .text {
+  font-size: 20rpx;
+}
+.good_serve .shop_service button.default {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.good_serve .shopCart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.good_serve .shopCart .iconfont.icon-gouwuche {
+  font-size: 40rpx;
+}
+.good_serve .shopCart .text {
+  font-size: 20rpx;
+}
+.good_serve .addShopCart {
+  flex: 0 0 196rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 22rpx;
+  background-color: #FCAA23;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  color: #ffffff;
+}
+.good_serve .buy {
+  flex: 0 0 196rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30rpx;
+  background-color: #EA4350;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  color: #ffffff;
+}

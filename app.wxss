@@ -1,5 +1,7 @@
 
 /* 样式初始化 */
+/* 引入iconfont样式 */
+@import "./styles/iconfont.wxss";
 page,view,text,image,navigator,scroll-view{
   margin:0rpx;
   padding:0rpx;
