@@ -1,2 +1,45 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="shopping_cart" wx:if="{{carts_good.length}}">
+  <view class="cart_good" wx:for="{{carts_good}}" wx:key="index">
+    <view class="{{item.check?'iconfont icon-xuanzhong':'noselect'}}" bindtap="handleGoodSelect" data-good_id="{{item.goods_id}}"></view>
+    <view class="cart_good_left">
+      <image src="{{item.goods_big_logo}}"></image>
+    </view>
+    <view class="cart_good_right">
+      <view class="cart_good_title">{{item.goods_name}}</view>
+      <view class="cart_good_params">
+        <view class="cart_good_price">￥{{item.goods_price}}</view>
+        <view class="cart_good_num">
+          <view class="iconfont icon-iconset0187" bindtap="handleGoodNumber" data-good_id="{{item.goods_id}}" data-operation="{{-1}}"></view>
+          <view class="num">{{item.num}}</view>
+          <view class="iconfont icon-54" bindtap="handleGoodNumber" data-good_id="{{item.goods_id}}" data-operation="{{1}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 总和计算 -->
+  <view class="good_calculate">
+    <view class="good_calculate_left">
+      <view class="{{isAllSeclect?'iconfont icon-xuanzhong':'noselect'}}" bindtap="handleAllSeclect"></view>
+      <view class="chooseAll">全选</view>
+      <view class="goodsPrice">合计：
+        <text class="money">￥{{allPrice||0}}</text>
+      </view>
+    </view>
+    <view class="pay_button" wx:if="{{!!allNumber}}">
+      <navigator url="/pages/pay/index" open-type="navigate">去结算({{allNumber||0}})</navigator>
+    </view>
+    <view class="nopay_button" wx:else>去结算</view>
+  </view>
+</view>
+
+<!-- 当商品不存在时的页面 -->
+<view class="empty_cart" wx:else>
+  <view class="cart_image">
+    <image src="http://hbimg.b0.upaiyun.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658" mode="widthFix"></image>
+  </view>
+  <view class="tips_one">购物车居然是空的</view>
+  <view class="tips_two">再忙，也记得买点什么犒赏自己~</view>
+  <navigator url="/pages/category/index" open-type="switchTab">
+    <view class="shopping_button">去逛逛</view>
+  </navigator>
+</view>

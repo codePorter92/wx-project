@@ -1,2 +1,40 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<view class="pay_page">
+  <view class="pay_Address">
+    <view class="pay_haveAddress" wx:if="{{address.all}}">
+      <view class="buyer_address">{{address.all}}</view>
+      <view class="buyer_nameAndPhone">
+      <text class="buyer_name">{{address.userName}}</text>
+      <text class="buyer_phone">{{address.telNumber}}</text>
+      </view>
+    </view>
+    <view class="pay_noAddress" wx:else bindtap="handleGetAddress">选择地址</view>
+  </view>
+  <view class="pay_goodList">
+    <view class="pay_goodList_title">已选商品</view>
+    <view class="pay_goodList_item" wx:for="{{carts}}" wx:key="index" wx:if="{{item.check}}">
+      <view class="item_left">
+        <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+      </view>
+      <view class="item_right">
+        <view class="item_right_title">{{item.goods_name}}</view>
+        <view class="item_right_priceAndNum">
+          <view class="item_right_price">￥{{item.goods_price}}</view>
+          <view class="item_right_num">x{{item.num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 尾部固定栏 -->
+<view class="pay_priceAndPay">
+  <view class="pay_price">合计：
+    <text><text class="RMB">￥</text>{{allPrice}}</text>
+  </view>
+  
+  <view class="pay_button" wx:if="{{address.all && allNum}}">
+    <view class="pay_button_item"> 去支付({{allNum}})</view>
+    <button class="default" type="default" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+  </view>
+  <view class="nopay_button" wx:else>去支付</view>
+</view>

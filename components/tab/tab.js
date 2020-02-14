@@ -22,13 +22,11 @@ Component({
    */
   methods: {
     tabClick(e){
-      console.log(e.currentTarget.dataset.index)
       const params = e.currentTarget.dataset.index
       const tabs = this.data.tab_list
       tabs.forEach(v=>{
         v.id===params?v.isActive=true:v.isActive=false
       })
-      console.log(tabs)
       this.setData({
         tabs
       })

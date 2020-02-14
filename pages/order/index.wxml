@@ -1,0 +1,20 @@
+<!-- tab自定义组件 -->
+<tab tab_list="{{tab_list}}" bind:tabChange="handleTabChange" />
+<!-- 账单类项目-->
+<view class="orderList">
+  <view class="orderList_item" wx:for="{{orderList}}" wx:key="index">
+     <view class="ordreList_number">
+        <view>订单编号</view>
+        <view>{{item.order_number}}</view>
+     </view>
+     <view class="orderList_money">
+        <view>订单金额</view>
+        <view class="money"><text class="RMB">￥</text>{{item.order_price}}</view>
+     </view>
+     <view class="orderList_date">
+        <view>订单日期</view>
+        <view>{{item.create_time}}</view>
+     </view>
+  </view>
+</view>
+

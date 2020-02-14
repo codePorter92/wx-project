@@ -1,0 +1,33 @@
+.orderList {
+  background-color: #f9f9f9;
+}
+.orderList .orderList_item {
+  width: 100vw;
+  height: 250rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 39rpx 35rpx 38rpx 32rpx;
+  margin-bottom: 13rpx;
+  background-color: #fff;
+  color: #696969;
+  font-size: 30rpx;
+}
+.orderList .orderList_item .ordreList_number {
+  display: flex;
+  justify-content: space-between;
+}
+.orderList .orderList_item .orderList_money {
+  display: flex;
+  justify-content: space-between;
+}
+.orderList .orderList_item .orderList_money .money {
+  color: var(--themecolor);
+}
+.orderList .orderList_item .orderList_money .money .RMB {
+  font-size: 20rpx;
+}
+.orderList .orderList_item .orderList_date {
+  display: flex;
+  justify-content: space-between;
+}

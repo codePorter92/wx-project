@@ -1,0 +1,185 @@
+.shopping_cart{
+    padding:27rpx 27rpx 0 25rpx;
+    .cart_good {
+        width:698rpx;
+        height:209rpx;
+        overflow: hidden;
+        .iconfont.icon-xuanzhong {
+            float: left;  
+            width: 36rpx;
+            height:36rpx; 
+            font-size: 36rpx; 
+            color:var(--themecolor);
+            margin:72rpx 0 0 8rpx;     
+          }
+          .noselect{
+            float:left;
+            width: 36rpx;
+            height:36rpx; 
+            border: 1px solid #747171;
+            border-radius: 50%;
+            margin:72rpx 0 0 8rpx; 
+         }
+        .cart_good_left {
+            float:left;
+            margin:9rpx 20rpx 9rpx 35rpx;
+          image {
+            width:191rpx;
+            height:191rpx;
+          }
+        }
+      
+        .cart_good_right {
+          float:left;
+          width:410rpx;   
+          height:100%;  
+          display:flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding:26rpx 0;  
+          .cart_good_title {
+            font-size:24rpx;
+            color:#434343;
+            display:-webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
+          .cart_good_params {
+              display:flex;
+              justify-content: space-between;
+              height:30rpx;
+            .cart_good_price {
+              font-size:24rpx;
+              color:var(--themecolor)  
+            }
+      
+            .cart_good_num {
+                display:flex;
+                color:#8a8a8a;
+                font-size:30rpx;
+              .iconfont.icon-iconset0187 {
+              }
+              .num {
+                margin:0 30rpx;
+                align-self: center;  
+              }
+              .iconfont.icon-54 {
+                  align-self: center;
+              }
+            }
+          }
+        }
+      }
+      
+      
+      .good_calculate {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width:100vw;
+          display:flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 83rpx;
+          padding:0 21rpx 0 23rpx;
+          border-top: 1px solid #eeeeee;
+        // .chooseAll {
+        //   font-size:21rpx;
+        //   color:#8a8a8a;
+        //   margin-right:36rpx;
+        // }
+      
+        // .goodsPrice {
+        //     font-size:26rpx;
+        //   text.money {
+        //     font-size:28rpx;
+        //     color:var(--themecolor)
+        //   }
+        // }
+        .good_calculate_left {
+            display:flex;
+            align-items: center;
+            height:100%;
+            .iconfont.icon-xuanzhong{
+            width: 36rpx;
+            height:36rpx; 
+            font-size: 36rpx; 
+            color:var(--themecolor);  
+            }
+            .noselect{
+             width: 36rpx;
+             height:36rpx; 
+             border: 1px solid #747171;
+             border-radius: 50%; 
+            }
+            .chooseAll {
+            font-size:21rpx;
+            color:#8a8a8a;
+            margin:0 36rpx 0 24rpx; 
+            }
+          
+            .goodsPrice { 
+                font-size:26rpx;
+              text.money {
+                font-size:28rpx;
+                color:var(--themecolor)
+              }
+            }
+          }
+        .pay_button {
+            width:150rpx;
+            height:52rpx;
+            background-color: var(--themecolor);
+            border-radius: 50rpx;
+            text-align: center;
+            line-height: 52rpx;
+            font-size:21rpx;
+            color:#ffffff;
+        }
+        .nopay_button{
+            width:150rpx;
+            height:52rpx;
+            background-color: rgb(185, 182, 182);
+            border-radius: 50rpx;
+            text-align: center;
+            line-height: 52rpx;
+            font-size:21rpx;
+            color:#ffffff;
+        }
+      }
+}
+
+.empty_cart {
+    height:100vh;
+    text-align: center;
+    background-color: #f9f4f9;
+    .cart_image {
+      image {
+  
+      }
+    }
+  
+    .tips_one {
+      margin-bottom: 14rpx;  
+      font-size: 35rpx;
+      font-weight: 600;
+      color:#434343;   
+    }
+  
+    .tips_two {
+      margin-bottom: 10rpx;
+      font-size:28rpx;
+      color: #b6b3b3;  
+    }
+  
+    navigator {
+       width:120rpx;
+       height:60rpx;
+       line-height: 60rpx;
+       margin: 0 auto;
+       border: 1px solid rgb(160, 158, 158); 
+       font-size: 21rpx;
+       color:var(--themecolor); 
+    }
+  }
