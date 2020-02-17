@@ -1,0 +1,4 @@
+.auth_button{
+  width:45vw;
+  margin: 30rpx auto;
+}

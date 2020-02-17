@@ -1,0 +1,123 @@
+.userInfo-page {
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+.userInfo-page .userInfo_show {
+  width: 100vw;
+  position: relative;
+  height: 329rpx;
+}
+.userInfo-page .userInfo_show .userInfo_background {
+  filter: blur(28rpx);
+}
+.userInfo-page .userInfo_show .userInfo_background image {
+  width: 100vw;
+  height: 329rpx;
+}
+.userInfo-page .userInfo_show .userInfo_headeImage {
+  position: absolute;
+  top: 32rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 172rpx;
+  height: 172rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userInfo-page .userInfo_show .userInfo_headeImage image {
+  width: 100%;
+  height: 100%;
+}
+.userInfo-page .userInfo_show .userInfo_nickName {
+  position: absolute;
+  bottom: 68rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32rpx;
+  color: #ffffff;
+}
+.userInfo-page .userInfo_login {
+  width: 100vw;
+  position: relative;
+  height: 329rpx;
+}
+.userInfo-page .userInfo_login button {
+  width: 45vw;
+  position: absolute;
+  top: 60rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.userInfo-page .userInfo-tabBar {
+  height: 144rpx;
+  margin: 20rpx 13rpx;
+  overflow: hidden;
+  background-color: #fff;
+}
+.userInfo-page .userInfo-tabBar navigator {
+  float: left;
+  width: 25%;
+  padding-top: 20rpx;
+}
+.userInfo-page .userInfo-tabBar navigator .tabBar_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userInfo-page .userInfo-tabBar navigator .tabBar_item text.iconfont {
+  font-size: 70rpx;
+}
+.userInfo-page .userInfo-tabBar navigator .tabBar_item text.font {
+  font-size: 26rpx;
+}
+.userInfo-page .userInfo-tabBar navigator:nth-child(3) text.iconfont {
+  font-size: 65rpx;
+  padding-bottom: 4rpx;
+}
+.userInfo-page .userInfo-funtion {
+  height: 520rpx;
+  margin: 0 12rpx;
+  padding: 0 34rpx 0 28rpx;
+  background-color: #fff;
+}
+.userInfo-page .userInfo-funtion .contact_server {
+  height: 95rpx;
+  line-height: 95rpx;
+  border-bottom: 1px solid #f3f3f3;
+  color: #8A8A8A;
+  font-size: 26rpx;
+}
+.userInfo-page .userInfo-funtion .contact_server .iconfont.icon-lianxikefu {
+  font-size: 50rpx;
+  padding-right: 28rpx;
+}
+.userInfo-page .userInfo-funtion .contact_server .phone {
+  padding-top: 8rpx;
+  float: right;
+}
+.userInfo-page .userInfo-funtion .good_feedback {
+  height: 95rpx;
+  line-height: 95rpx;
+  border-bottom: 1px solid #f3f3f3;
+  color: #8A8A8A;
+  font-size: 26rpx;
+}
+.userInfo-page .userInfo-funtion .good_feedback .iconfont.icon-yijianfankui {
+  font-size: 50rpx;
+  padding-right: 28rpx;
+}
+.userInfo-page .userInfo-funtion .current_version {
+  height: 95rpx;
+  line-height: 95rpx;
+  border-bottom: 1px solid #f3f3f3;
+  color: #8A8A8A;
+  font-size: 26rpx;
+}
+.userInfo-page .userInfo-funtion .current_version .iconfont.icon-ziyuan {
+  font-size: 50rpx;
+  padding-right: 28rpx;
+}
+.userInfo-page .userInfo-funtion .current_version .phone {
+  padding-top: 8rpx;
+  float: right;
+}

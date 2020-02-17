@@ -1,0 +1,26 @@
+<view class="feedBack_page">
+  <view class="question_class">
+     <view class="question_class_title">选择问题类型</view>
+     <view class="question_class_group">
+        <view class="question_function">功能问题</view>
+        <view class="question_propety">性能问题</view>
+        <view class="question_experience">体验问题</view>
+        <view class="question_else">其他</view>
+     </view>
+  </view>
+  <!-- 文本域 -->
+  <textarea placeholder="请描述一下您的问题"></textarea>
+  <!-- 图片区 -->
+  <view class="picture_box">
+     <view class="box_title">上传图片 ({{uploadPicNumber}}/{{tempFilePaths.length}})</view>
+     <view class="picture_group">
+     <view class="picture_add" bindtap="handleChooseImage">+</view>
+     <view class="picture_item" wx:for="{{tempFilePaths}}" wx:key="index">
+     <image src="{{item}}"></image>
+     <view class="picture_delete" bindtap="handleDeleteImage" data-index="{{item.index}}">X</view>
+     </view>
+     </view>
+  </view>
+  <!-- 提交按钮 -->
+  <view class="button_upload" bindtap="handleUploadFile">提交</view>
+</view>

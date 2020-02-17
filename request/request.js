@@ -8,6 +8,11 @@ export const request = parmas => {
       mask:true
     })
     //返回一个promise
+    let header={...parmas.header}
+    if(parmas.url.includes("/my/")){
+      header["Authorization"]=wx.getStorageSync("token")
+    }
+    parmas.header=header
     return new Promise(function(resolve,reject){
         wx.request({
           // 在使用过程中，输入的参数必须以对象的形式输入,可以传参

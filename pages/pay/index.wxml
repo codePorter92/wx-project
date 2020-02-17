@@ -5,6 +5,7 @@
       <view class="buyer_nameAndPhone">
       <text class="buyer_name">{{address.userName}}</text>
       <text class="buyer_phone">{{address.telNumber}}</text>
+      <text class="addNewAddress" bindtap="addNewAddress">添加地址</text>
       </view>
     </view>
     <view class="pay_noAddress" wx:else bindtap="handleGetAddress">选择地址</view>
@@ -32,9 +33,8 @@
     <text><text class="RMB">￥</text>{{allPrice}}</text>
   </view>
   
-  <view class="pay_button" wx:if="{{address.all && allNum}}">
-    <view class="pay_button_item"> 去支付({{allNum}})</view>
-    <button class="default" type="default" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+  <view class="pay_button" wx:if="{{address.all && allNum}}" bindtap="handlePayment">
+   去支付({{allNum}})
   </view>
   <view class="nopay_button" wx:else>去支付</view>
 </view>

@@ -18,10 +18,10 @@ export const showModal= (params)=>{
 export const getsetting=(params)=>{
   return new Promise((resolve,reject)=>{
     wx.getSetting({
-      success(res){
+      success:(res)=>{
         resolve(res)
       },
-      fail(err){
+      fail:(err)=>{
         reject(err)
       }
     })
@@ -32,10 +32,10 @@ export const getsetting=(params)=>{
 export const openSetting=(params)=>{
   return new Promise((resolve,reject)=>{
     wx.openSetting({
-      success(res){
+      success:(res)=>{
         resolve(res)
       },
-      fail(err){
+      fail:(err)=>{
         reject(err)
       }
     })
@@ -45,10 +45,10 @@ export const openSetting=(params)=>{
 export const chooseAddress=(params)=>{
   return new Promise((resolve,reject)=>{
     wx.chooseAddress({
-      success(res){
+      success:(res)=>{
         resolve(res)
       },
-      fail(err){
+      fail:(err)=>{
         reject(err)
       }
     })
@@ -59,10 +59,10 @@ export const chooseAddress=(params)=>{
 export const login= (params)=>{
   return new Promise((resolve,reject)=>{
     wx.login({
-      success(res){
+      success:(res)=>{
         resolve(res)
       },
-      fail(err){
+      fail:(err)=>{
         reject(err)
       }
     })
@@ -73,10 +73,10 @@ export const requestPayment = (params)=>{
   return new Promise((resolve,reject)=>{
     wx.requestPayment({
       ...params,
-      success(res){
+      success:(res)=>{
         resolve(res)
       },
-      fail(err){
+      fail:(err)=>{
         reject(err)
       }
     })

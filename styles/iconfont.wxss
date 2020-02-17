@@ -18,11 +18,11 @@
 .icon-54:before {
   content: "\e642";
 }
-
+/* 全部订单 */
 .icon-quanbudingdan:before {
   content: "\e600";
 }
-
+/* 退款 */
 .icon-tuikuan:before {
   content: "\e636";
 }
@@ -34,23 +34,22 @@
 .icon-gouwuche:before {
   content: "\e622";
 }
-
+/* 意见反馈 */
 .icon-yijianfankui:before {
   content: "\e63c";
 }
-
 .icon-fenxiang:before {
   content: "\e603";
 }
-
+/* 待付款 */
 .icon-icon-test:before {
   content: "\e610";
 }
-
+/* 联系客服 */
 .icon-lianxikefu:before {
   content: "\e646";
 }
-
+/* 版本 */
 .icon-ziyuan:before {
   content: "\e63e";
 }
@@ -58,7 +57,7 @@
 .icon-xuanzhong:before {
   content: "\e618";
 }
-
+/* 待收货 */
 .icon-daishouhuo:before {
   content: "\e612";
 }
@@ -66,7 +65,7 @@
 .icon-shoucang_gaoliang:before {
   content: "\e620";
 }
-
+/* 未知 */
 .icon-icon-test1:before {
   content: "\e627";
 }

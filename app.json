@@ -7,7 +7,10 @@
     "pages/goods_list/index",
     "pages/cart/index",
     "pages/pay/index",
-    "pages/order/index"
+    "pages/order/index",
+    "pages/auth/index",
+    "pages/user/index",
+    "pages/feedback/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

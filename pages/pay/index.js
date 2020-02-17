@@ -34,25 +34,64 @@ Page({
     } catch (err) {
       console.log(err)
     }
+   
+  },
+  // 重新选择地址
+  addNewAddress: async function(){
+    const address = await chooseAddress()
+    let { provinceName, cityName, countyName, detailInfo } = address
+    address.all = provinceName + cityName + countyName + detailInfo
+    this.setData({
+      address
+    })
+    wx.setStorageSync("address", address)
+  },
+  // 执行支付内容1
+  handlePayment: async function(){
+    try{
+      const token = wx.getStorageSync("token")
+      if (!token) {
+        wx.navigateTo({
+          url: '/pages/auth/index',
+        })
+      }else{
+        this.setOrder(token)
+      }
+      
+    }catch(err){
+      console.log(err)
+      wx.showToast({
+        title: "支付失败",
+        icon: "success",
+        mask: true
+      })
+    }
+
   },
   // 执行支付内容
-  getUserInfo: async function (e) {
-    // console.log(e.detail)
-    try {
-      const { encryptedData, rawData, iv, signature } = e.detail
-      let { code } = await login()
-      const res = await request({
-        data: { encryptedData, rawData, iv, signature, code },
-        method: "POST",
-        url: "/users/wxlogin"
-      })
-      const { token } = res.data.message
-      wx.setStorageSync("token",token)
-      this.setOrder(token)
-    } catch (err) {
-      console.log(err)
-    }
-  },
+  // getUserInfo: async function (e) {
+  //   // console.log(e.detail)
+  //   try {
+  //     const { encryptedData, rawData, iv, signature } = e.detail
+  //     let { code } = await login()
+  //     const res = await request({
+  //       data: { encryptedData, rawData, iv, signature, code },
+  //       method: "POST",
+  //       url: "/users/wxlogin"
+  //     })
+  //     const { token } = res.data.message
+  //     wx.setStorageSync("token",token)
+  //     this.setOrder(token)
+  //   } catch (err) {
+  //     console.log(err)
+  //     wx.showToast({
+  //       title:"支付失败",
+  //       icon:"fail",
+  //       mask:true
+  //     })
+  //   }
+    
+  // },
   // 创建购物账单
   setOrder: async function (token) {
     const carts = wx.getStorageSync("carts")
@@ -69,9 +108,6 @@ Page({
     let consignee_add = this.data.address.all
     let order_price = this.data.allPrice + ""
     const orderCode = await request({
-      header: {
-        Authorization: token
-      },
       data: {
         goods, consignee_add, order_price
       },
@@ -81,9 +117,6 @@ Page({
     let { order_number } = orderCode.data.message
     console.log(orderCode.data.message)
     const prePay = await request({
-      header: {
-        Authorization: token
-      },
       url: "/my/orders/req_unifiedorder",
       method: "POST",
       data: {
@@ -95,9 +128,6 @@ Page({
     const orderResult = await requestPayment(pay)
     // 查询账单是否支付
     const checkOrder = await request({
-      header:{
-        Authorization: token
-      },
       url:"/my/orders/chkOrder",
       method:"POST",
       data:{
@@ -114,11 +144,9 @@ Page({
     const noPayCarts = carts.filter(v => !v.check)
     console.log(noPayCarts)
     wx.setStorageSync("carts", noPayCarts)
-    setTimeout(() => {
       wx.navigateTo({
         url: '/pages/order/index',
       })
-    }, 1)
   },
   /**
    * 生命周期函数--监听页面加载

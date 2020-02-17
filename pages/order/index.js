@@ -10,20 +10,22 @@ Page({
     {
       id:0,
       value:"全部",
-      isActive:true
+      isActive:true,
+      type:1
     }, 
     {
       id: 1,
       value: "待付款",
-      isActive: false
+      isActive: false,
+      type:2
     }, 
     {
       id: 2,
       value: "待发货",
-      isActive: false
+      isActive: false,
+      type:3
     },
   ],
-  type:1,
   orderList:[]  
   },
   // tab栏的函数
@@ -31,15 +33,7 @@ Page({
     this.setData({
       tab_list:e.detail
     })
-    // console.log(this.data.tab_list)
-    let {tab_list} =this.data
-    let type = 0
-    tab_list.forEach(v=>{
-      if(v.isActive){
-        type=++v.id
-      }
-    })
-    this.getOrderList(type)
+    this.getOrderList()
   },
   // 渲染列表
   /**
@@ -48,8 +42,28 @@ Page({
   // 监听tab栏
   
   onLoad: function (options) {
-
+    this.getOrderList()
   },
+  getOrderList: async function(){
+    let type=0
+    this.data.tab_list.forEach(v=>{
+      if(v.isActive){
+        type=v.type
+      }
+    })
+    const res= await request({
+      url:"/my/orders/all",
+      data:{
+        type
+      }
+    })
+    res.data.message.orders.map(v=>{
+      v.create_time_cn = new Date(v.create_time*1000).toLocaleString()
+    })
+    this.setData({
+      orderList:res.data.message.orders
+    })
+  }, 
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -62,26 +76,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getOrderList(this.data.type)
+   
   },
   // 请求数据
-  getOrderList: async function(type){
-    const token = wx.getStorageSync("token")||''
-    const res = await request({
-      header:{
-        Authorization:token
-      },
-      url:"/my/orders/all",
-      data:{
-        type
-      }
-    })
-    console.log(res.data.message.orders)
-    this.setData({
-      orderList:res.data.message.orders
-    })
-    
-  },
+  
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -12,7 +12,7 @@
 .pay_page .pay_Address .pay_noAddress {
   width: 303rpx;
   height: 89rpx;
-  margin: 50% auto;
+  margin: 49rpx auto;
   text-align: center;
   line-height: 89rpx;
   font-size: 28rpx;
@@ -39,6 +39,11 @@
 }
 .pay_page .pay_Address .pay_haveAddress .buyer_nameAndPhone text.buyer_name {
   padding-right: 40rpx;
+}
+.pay_page .pay_Address .pay_haveAddress .buyer_nameAndPhone text.addNewAddress {
+  float: right;
+  font-size: 20rpx;
+  color: #696969;
 }
 .pay_page .pay_goodList {
   background-color: #fff;
@@ -124,10 +129,6 @@
 .pay_priceAndPay .pay_button {
   width: 150rpx;
   height: 50rpx;
-  position: relative;
-}
-.pay_priceAndPay .pay_button .pay_button_item {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,12 +136,4 @@
   border-radius: 40rpx;
   font-size: 21rpx;
   color: #fff;
-}
-.pay_priceAndPay .pay_button button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
 }

@@ -1,0 +1,135 @@
+.feedBack_page {
+  height: 100vh;
+  padding: 20rpx 20rpx 0 20rpx;
+  background-color: #f9f9f9;
+}
+.feedBack_page .question_class {
+  height: 203rpx;
+  padding: 15rpx 0 0 29rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  overflow: hidden;
+}
+.feedBack_page .question_class .question_class_title {
+  padding-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.feedBack_page .question_class .question_class_group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.feedBack_page .question_class .question_class_group .question_function {
+  flex: 0 0 181rpx;
+  height: 46rpx;
+  margin: 0 55rpx 20rpx 0;
+  font-size: 20rpx;
+  color: var(--themecolor);
+  text-align: center;
+  line-height: 46rpx;
+  background-color: #FFE6E6;
+  border: 1px solid var(--themecolor);
+  border-radius: 80rpx;
+}
+.feedBack_page .question_class .question_class_group .question_propety {
+  flex: 0 0 181rpx;
+  height: 46rpx;
+  margin: 0 55rpx 20rpx 0;
+  font-size: 20rpx;
+  color: var(--themecolor);
+  text-align: center;
+  line-height: 46rpx;
+  background-color: #FFE6E6;
+  border: 1px solid var(--themecolor);
+  border-radius: 80rpx;
+}
+.feedBack_page .question_class .question_class_group .question_experience {
+  flex: 0 0 181rpx;
+  height: 46rpx;
+  margin: 0 0 20rpx 0;
+  font-size: 20rpx;
+  color: var(--themecolor);
+  text-align: center;
+  line-height: 46rpx;
+  background-color: #FFE6E6;
+  border: 1px solid var(--themecolor);
+  border-radius: 80rpx;
+}
+.feedBack_page .question_class .question_class_group .question_else {
+  flex: 0 0 181rpx;
+  height: 46rpx;
+  font-size: 20rpx;
+  color: var(--themecolor);
+  text-align: center;
+  line-height: 46rpx;
+  background-color: #FFE6E6;
+  border: 1px solid var(--themecolor);
+  border-radius: 80rpx;
+}
+.feedBack_page textarea {
+  width: calc(100vw - 40rpx);
+  height: 391rpx;
+  background-color: #ffffff;
+  font-size: 26rpx;
+  padding: 22rpx 0 0 29rpx;
+  margin-bottom: 20rpx;
+}
+.feedBack_page .picture_box {
+  width: 710rpx;
+  padding: 20rpx 18rpx 13rpx 18rpx;
+  background-color: #fff;
+}
+.feedBack_page .picture_box .box_title {
+  font-size: 26rpx;
+  color: #8A8A8A;
+  padding: 0 0 18rpx 20rpx;
+}
+.feedBack_page .picture_box .picture_group {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.feedBack_page .picture_box .picture_group .picture_add {
+  flex: 0 0 128rpx;
+  height: 128rpx;
+  margin: 0 4rpx 15rpx 0;
+  text-align: center;
+  line-height: 128rpx;
+  background-color: #d8d8d8;
+  font-size: 70rpx;
+  color: #a6a6a6;
+}
+.feedBack_page .picture_box .picture_group .picture_item {
+  flex: 0 0 128rpx;
+  height: 128rpx;
+  margin: 0 4rpx 15rpx 0;
+  position: relative;
+}
+.feedBack_page .picture_box .picture_group .picture_item image {
+  width: 100%;
+  height: 100%;
+}
+.feedBack_page .picture_box .picture_group .picture_item .picture_delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44rpx;
+  height: 44rpx;
+  text-align: center;
+  line-height: 44rpx;
+  border-radius: 50%;
+  background-color: var(--themecolor);
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #eea654;
+}
+.feedBack_page .button_upload {
+  width: calc(100vw - 40rpx);
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rpx;
+  background-color: var(--themecolor);
+  font-size: 30rpx;
+  color: #fff;
+}

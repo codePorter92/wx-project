@@ -1,0 +1,42 @@
+<view class="userInfo-page">
+  <view class="userInfo_show" wx:if="{{userInfo.nickName}}">
+    <view class="userInfo_background">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="userInfo_headeImage">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="userInfo_nickName">{{userInfo.nickName}}</view>
+  </view>
+  <view class="userInfo_login" wx:else>
+    <button type="warn" plain open-type="getUserInfo" bindgetuserinfo="handleUserInfo">用户登录</button>
+  </view>
+  <!-- tab栏 -->
+  <view class="userInfo-tabBar">
+    <navigator url="/pages/order/index?type=1" wx:for="{{tabBar}}" wx:key="index">
+      <view class="tabBar_item">
+        <text class="iconfont {{item.class}}"></text>
+        <text class="font">{{item.value}}</text>
+      </view>
+    </navigator>
+  </view>
+  <!-- 内容情况 -->
+<view class="userInfo-funtion">
+  <view class="contact_server">
+    <text class="iconfont icon-lianxikefu"></text>
+    <text class="font">联系客服</text>
+    <text class="phone">400-618-4000</text>
+  </view>
+  <navigator url="/pages/feedback/index">
+    <view class="good_feedback">
+      <text class="iconfont icon-yijianfankui"></text>
+      <text class="font">意见反馈</text>
+    </view>
+  </navigator>
+  <view class="current_version">
+    <text class="iconfont icon-ziyuan"></text>
+    <text class="font">当前版本</text>
+    <text class="phone">v4.1.1</text>
+  </view>
+</view>
+</view>
